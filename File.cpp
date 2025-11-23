@@ -80,12 +80,17 @@ int main()
                 else{
                     cout<<"Program ended";
                 }
-            }
+            }   string ex;
+                cout<<"Enter to exit";
+                cin>>ex;
                 return 0;
             }
         }
         cout<<"User Not found";
         file.close();
    }
+                string ex;
+                cout<<"Enter to exit";
+                cin>>ex;
     return 0;
 }
