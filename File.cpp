@@ -26,7 +26,7 @@ int main()
         cin.ignore();
         getline(cin,info);
         data<<info<<endl;
-        cout<<"If you want to enter more info enter 'y' else '0':"<<endl;
+        cout<<"If you want to enter more info enter '1' else '0':"<<endl;
         cin>>inp;
     }while(inp!=0);
    }
@@ -45,9 +45,42 @@ int main()
                 string nn=username+".txt";
                 ifstream ff(nn);
                 string w;
-                while(getline(ff,w)){
-                    cout<<w<<endl;
+                cout<<"If u want to read data enter '1' and for write '2': ";
+                int red;
+                cin>>red;
+                if(red==1){
+                    while(getline(ff,w)){
+                        cout<<w<<endl;
+                    }
+                    ff.close();
                 }
+                else{
+                    ofstream write(nn, ios::app);
+                    int inpp;
+                    do{
+                        string info;
+                        cin.ignore();
+                        getline(cin,info);
+                        write<<info<<endl;
+                        cout<<"If you want to enter more info enter '1' else '0':"<<endl;
+                        cin>>inpp;
+                    }while(inpp!=0);
+                    write.close();
+                cout<<"Do u want to see your data then enter 'y' else 'n': ";
+                string dat;
+                cin>>dat;
+                if(dat=="y"){
+                    ifstream readg(nn);
+                    string reading;
+                    while(getline(readg,reading)){
+                        cout<<reading<<endl;
+                    }
+                    readg.close();
+                }
+                else{
+                    cout<<"Program ended";
+                }
+            }
                 return 0;
             }
         }
