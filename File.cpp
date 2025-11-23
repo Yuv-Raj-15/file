@@ -26,7 +26,7 @@ int main()
         cin.ignore();
         getline(cin,info);
         data<<info<<endl;
-        cout<<"More";
+        cout<<"If you want to enter more info enter 'y' else '0':"<<endl;
         cin>>inp;
     }while(inp!=0);
    }
