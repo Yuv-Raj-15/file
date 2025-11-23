@@ -3,7 +3,7 @@
 using namespace std;
 
 int main()
-{   cout<<"For signup(1) and for login(2)";
+{   cout<<"For signup(1) and for login(2): ";
     int n;
     cin>>n;
    if(n==1){
@@ -21,6 +21,7 @@ int main()
     ofstream data(nn);
     
     int inp;
+    cout<<"Input a info u want to save: "<<endl;
     do{
         string info;
         cin.ignore();
@@ -29,6 +30,11 @@ int main()
         cout<<"If you want to enter more info enter '1' else '0':"<<endl;
         cin>>inp;
     }while(inp!=0);
+        string ex;
+        cout<<"Press 'Y' to exit: ";
+        cin>>ex;
+        cout<<"Done";
+        return 0;
    }
    else{
         ifstream file("Data.txt");
@@ -53,6 +59,11 @@ int main()
                         cout<<w<<endl;
                     }
                     ff.close();
+                    string ex;
+                    cout<<"Press 'Y' to exit: ";
+                    cin>>ex;
+                    cout<<"Done";
+                    return 0;
                 }
                 else{
                     ofstream write(nn, ios::app);
@@ -81,16 +92,18 @@ int main()
                     cout<<"Program ended";
                 }
             }   string ex;
-                cout<<"Enter to exit";
+                cout<<"Press 'Y' to exit: ";
                 cin>>ex;
+                cout<<"Done";
                 return 0;
             }
         }
-        cout<<"User Not found";
+        cout<<"User Not found"<<endl;
+                string ex;
+                cout<<"Press 'Y' to exit: ";
+                cin>>ex;
+                cout<<"Done";
         file.close();
    }
-                string ex;
-                cout<<"Enter to exit";
-                cin>>ex;
     return 0;
 }
